@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleindex.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Raccolta Idee di Acquisto</title>
 </head>
 <body>
@@ -12,29 +13,68 @@
         <div class="logo-container">
             <img src="logonavbar.png" alt="Logo" class="logo">
         </div>
+        <span class="icon" onclick="toggleNavbar()">&#9776;</span>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Idee Regalo</a></li>
-            <li><a href="#">Tecnologia</a></li>
-            <li><a href="#">Moda</a></li>
-            <li><a href="#">Casa e Giardino</a></li>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-couch"></i> Casa</a></li>
+            <li><a href="#"><i class="fas fa-heart"></i> Salute</a></li>
+            <li><a href="#"><i class="fas fa-smile"></i> Benessere</a></li>
+            <li><a href="#"><i class="fas fa-spray-can"></i> Cura della Casa</a></li>
+            <li><a href="#"><i class="fas fa-seedling"></i> Giardinaggio</a></li>
+            <li><a href="#"><i class="fas fa-paint-brush"></i> Hobby</a></li>
+            <li><a href="#"><i class="fas fa-clock"></i> Tempo Libero</a></li>
+            <li class="language">
+                <div class="dropdown">
+                    <a href="#" class="flag-icon" onclick="toggleLanguageMenu()">🇮🇹</a>
+                    <div class="language-dropdown-content">
+                        <a href="#" onclick="changeLanguage('it')">Italiano</a>
+                        <a href="#" onclick="changeLanguage('en')">English</a>
+                        <a href="#" onclick="changeLanguage('es')">Español</a>
+                        <a href="#" onclick="changeLanguage('fr')">Français</a>
+                    </div>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Raccolta Idee di Acquisto</h1>
-        <p>Scopri le migliori idee per i tuoi acquisti!</p>
+        <h1></h1>
+        <p></p>
     </header>
 
     <main>
         <section class="content">
-            <h2>Le Nostre Raccomandazioni</h2>
-            <p>Qui puoi aggiungere il tuo contenuto e le idee di acquisto.</p>
+            <h2></h2>
+            <p></p>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Raccolta Idee di Acquisto. Tutti i diritti riservati.</p>
-    </footer>
+    <script>
+        function toggleNavbar() {
+            var navbar = document.getElementById("navbar");
+            navbar.classList.toggle("responsive");
+        }
+
+        function toggleLanguageMenu() {
+            var langMenu = document.querySelector('.language-dropdown-content');
+            langMenu.classList.toggle('show');
+        }
+
+        function changeLanguage(lang) {
+            alert("Lingua cambiata in: " + lang);
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.flag-icon')) {
+                var dropdowns = document.getElementsByClassName("language-dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
