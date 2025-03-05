@@ -84,7 +84,14 @@ body {
 }
 
 .language {
-    margin-left: 30px; /* Spazio tra il menu e l'icona della lingua */
+    display: flex; /* Utilizza flexbox per allineare verticalmente */
+    align-items: center; /* Centra verticalmente l'icona e il testo */
+}
+
+.language img {
+    width: 40px; /* Aumenta la larghezza dell'icona della bandiera */
+    height: auto; /* Mantiene le proporzioni */
+    margin-right: 5px; /* Spazio tra l'icona e il testo */
 }
 
 .language-dropdown-content {

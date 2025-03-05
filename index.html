@@ -25,12 +25,17 @@
             <li><a href="#"><i class="fas fa-clock"></i> Tempo Libero</a></li>
             <li class="language">
                 <div class="dropdown">
-                    <a href="#" class="flag-icon" onclick="toggleLanguageMenu()">🇮🇹</a>
+                    <a href="#" class="flag-icon" onclick="toggleLanguageMenu(event)">
+                        <img src="bandieraita.jpg" alt="Italiano" style="width: 40px; height: auto;">
+                    </a>
                     <div class="language-dropdown-content">
-                        <a href="#" onclick="changeLanguage('it')">Italiano</a>
-                        <a href="#" onclick="changeLanguage('en')">English</a>
-                        <a href="#" onclick="changeLanguage('es')">Español</a>
-                        <a href="#" onclick="changeLanguage('fr')">Français</a>
+                        <a href="index.html" onclick="changeLanguage('it'); toggleLanguageMenu(event)">
+                            <img src="bandieraita.jpg" alt="Italiano" style="width: 40px; height: auto;"> Italiano
+                        </a>
+                        <a href="indexinglese.html" onclick="changeLanguage('en'); toggleLanguageMenu(event)">
+                            <img src="bandieraing.avif" alt="English" style="width: 40px; height: auto;"> English
+                        </a>
+                        <!-- Aggiungi altre lingue qui -->
                     </div>
                 </div>
             </li>
@@ -55,7 +60,7 @@
             navbar.classList.toggle("responsive");
         }
 
-        function toggleLanguageMenu() {
+        function toggleLanguageMenu(event) {
             var langMenu = document.querySelector('.language-dropdown-content');
             langMenu.classList.toggle('show');
         }
